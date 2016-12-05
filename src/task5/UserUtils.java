@@ -34,14 +34,18 @@ public class UserUtils {
         int len = users.length;
         for (int i = 0; i < len; i++) {
             if (users[i] != null && isEmptyUser(users[i])) {
-                users = arrayShift(users, i);
+                arrayShift(users, i);
                 i--;
             }
         }
         return users;
     }
+    private boolean isEmptyUser(User user) {
+        return user.getFirstName().isEmpty() &&
+                user.getLastName().isEmpty();
+    }
 
-    private User[] arrayShift(User[] user, int index) {
+    private void arrayShift(User[] user, int index) {
         int len = user.length;
         for (int k = index; k < len; k++) {
             if (k == len - 1) {
@@ -50,12 +54,8 @@ public class UserUtils {
             }
             user[k] = user[k+1];
         }
-        return user;
     }
 
-    private boolean isEmptyUser(User user) {
-        return user.getFirstName().isEmpty() &&
-                user.getLastName().isEmpty();
-    }
+
 
 }

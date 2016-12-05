@@ -3,7 +3,7 @@ package task3;
 import java.util.Arrays;
 
 public final class ArraysUtils {
-    public int sum(int[] values) {
+    public static int sum(int[] values) {
         int sum = 0;
         int len = values.length;
 
@@ -13,7 +13,7 @@ public final class ArraysUtils {
         return sum;
     }
 
-    public int min(int[] values) {
+    public static int min(int[] values) {
         int min = values[0];
         int len = values.length;
 
@@ -25,7 +25,7 @@ public final class ArraysUtils {
         return min;
     }
 
-    public int max(int[] values) {
+    public static int max(int[] values) {
         int max = values[0];
         int len = values.length;
 
@@ -37,7 +37,7 @@ public final class ArraysUtils {
         return max;
     }
 
-    public int maxPositive(int[] values) {
+    public static int maxPositive(int[] values) {
         int max = 0;
         int len = values.length;
 
@@ -51,7 +51,7 @@ public final class ArraysUtils {
         return max;
     }
 
-    public int multiplication(int[] values) {
+    public static int multiplication(int[] values) {
         int result = 1;
         int len = values.length;
 
@@ -61,13 +61,13 @@ public final class ArraysUtils {
         return result;
     }
 
-    public int modulus(int[] values) {
+    public static int modulus(int[] values) {
         int result = 0;
         result = values[0] % values[values.length-1];
         return result;
     }
 
-    public int secondLargest(int[] values) {
+    public static int secondLargest(int[] values) {
         int firstLargest, secondLargest;
 
         if (values[0] > values[1]) {
@@ -90,7 +90,7 @@ public final class ArraysUtils {
         return secondLargest;
     }
 
-    public int[] reverse(int[] array) {
+    public static int[] reverse(int[] array) {
         int len = array.length;
         int[] tmp = new int[len];
 
@@ -99,7 +99,10 @@ public final class ArraysUtils {
         }
         return tmp;
     }
-    public int[] findEvenElements(int[] array) {
-        return Arrays.stream(array).filter(value -> value % 2 == 0).toArray();
+
+    public static int[] findEvenElements(int[] array) {
+        return Arrays.stream(array)
+                .filter(value -> value % 2 == 0)
+                .toArray();
     }
 }
