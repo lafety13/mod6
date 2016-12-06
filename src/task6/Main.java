@@ -9,8 +9,6 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
         User[] userArray = new User[4];
-        UserUtils userUtils = new UserUtils();
-
         User user1 = new User(1, "Vadim", "kozak", 12200, 3000);
         User user2 = new User(2, "ivan", "petrov", 10000, 5000);
         User user3 = new User(2, "ivan", "petrov", 10000, 5000);
@@ -23,27 +21,27 @@ public class Main {
 
         //getUsersId
         System.out.println(" getUsersId");
-        Arrays.stream(userUtils.getUsersId(userArray))
+        Arrays.stream(UserUtils.getUsersId(userArray))
                 .forEach(System.out::println);
 
         //usersWithContitionalBalance
         System.out.println(" usersWithContitionalBalance");
-        Arrays.stream(userUtils.usersWithContitionalBalance(userArray, 5000))
+        Arrays.stream(UserUtils.usersWithContitionalBalance(userArray, 5000))
                 .forEach(user -> System.out.println(user.toString()));
 
         //uniqueUsers
         System.out.println(" uniqueUsers");
-        Arrays.stream(userUtils.uniqueUsers(userArray))
+        Arrays.stream(UserUtils.uniqueUsers(userArray))
                 .forEach(user -> System.out.println(user.toString()));
 
         //paySalaryToUsers
         System.out.println(" paySalaryToUsers");
-        Arrays.stream(userUtils.paySalaryToUsers(userArray))
+        Arrays.stream(UserUtils.paySalaryToUsers(userArray))
                 .forEach(user -> System.out.println(user.toString()));
 
         //deleteEmptyUsers
         System.out.println(" deleteEmptyUsers");
-        Arrays.stream(userUtils.deleteEmptyUsers(userArray))
+        Arrays.stream(UserUtils.deleteEmptyUsers(userArray))
                 .filter(Objects::nonNull)
                 .forEach(user -> System.out.println(user.toString()));
         System.out.println();
